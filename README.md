@@ -172,14 +172,45 @@ In the example above, `total` is the accumulator and `element` is the current el
 * `-0` - This is the same as above but when the number is a negative 
 * `0n` - This is when `BigInt` doesn't have any value, or is `0n`.
 * `""`, `''`, ` `` ` - When there is an empty string
-* Boolean
-* Symbol
-* Undefined
-* Null
+* undefined - This is the primitive value
+* null - Is when there is no value present
+* NaN - This means that a number was not declared
+* `document.all` - Is falsey if the [[isHTMLDDA]] internal slot is defined within the `document.all` object.
+
+Knowing that these are falsey to begin with will help when using an if statement. 
+
+Example:
+
+
+```
+const x = 0
+
+if(x){
+    console.log('truthy value')
+}
+else{
+    console.log('falsey value')
+}
+```
+ 
+In the above example, we are saying if the value is true, it will not be equal to 0 because it is a falsey value. If it is false, it will be 0.
 
 ## What are Async and Await?
+`async`/`await` work together to create an asychronous function that will work in a synchronous fashion by waiting for a response using `await`. This will return a promise upon request. This is because the `anync` function not be active unitl the `await` function has been returned. 
+
+`await` can only be used inside `async` to return a promise.
+
 ## What is an async function?
+The `async function` is a declaration function type allowing `await` to be used within it. 
+
+It allows asynchronous promise returns to be written in a better way so that promise chains do not need to be written.
+
+
 ## What are try and catch?
+A `try` statement can be used to execute block of code and test to see it there are errors.
+
+`catch` can then be used to create a block of code to be exeucted of there is an error in the `try` code block
+
 
 ### Resources
 [JS Datatypes](https://www.w3schools.com/js/js_datatypes.asp)
@@ -193,3 +224,7 @@ In the example above, `total` is the accumulator and `element` is the current el
 [Map, filter and reduce](https://www.freecodecamp.org/news/javascript-map-reduce-and-filter-explained-with-examples/)
 
 [Falsey Values](https://developer.mozilla.org/en-US/docs/Glossary/Falsy)
+
+[Async/Await](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function)
+
+[Try/Catch](https://www.w3schools.com/java/java_try_catch.asp)
